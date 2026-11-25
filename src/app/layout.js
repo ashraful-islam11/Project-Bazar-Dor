@@ -5,6 +5,7 @@ import Footer from "./components/shared/Footer";
 import { Suspense } from "react";
 import Header from "./components/home/Header";
 import NavLinks from "./components/home/NavLinks";
+import Marquee from "./components/home/Marquee";
 
 const hind_siliguri = Hind_Siliguri({
   subsets : ['latin','bengali'],
@@ -41,7 +42,7 @@ export default function RootLayout({ children }) {
 
         <NavLinks></NavLinks>
         <div className="bg-gray-50"></div>
-
+         <Marquee />
         {children}
         <Footer />
         <ToastContainer />
