@@ -40,7 +40,8 @@ const NavSection = () => {
 
         {/* ডান পাশ: HeroUI বাটন */}
         <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-          <Button
+            <Link href='/sign-in'>
+                <Button
             as={Link}
             href="/login"
             variant="light"
@@ -49,6 +50,8 @@ const NavSection = () => {
           >
             সাইন ইন
           </Button>
+            </Link>
+        
 
         <Link href= '/sing-up' >
           <Button
