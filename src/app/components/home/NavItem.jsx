@@ -1,0 +1,24 @@
+'use client'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+
+const NavItem = ({ nav }) => {
+    const pathName = usePathname()
+    // console.log('pathname: ', pathName)
+    const isActive = pathName === `/categoryDetail/${nav.slug}`
+    return (
+
+
+        <div className={isActive ? 'bg-green-600 rounded-xl px-3 py-2' : ''}>
+
+            <Link href={`/categoryDetail/${nav.slug}`} className="flex gap-1">
+                <span>{nav.icon}</span>
+                <p>{nav.nameBn}</p>
+            </Link>
+        </div>
+
+    );
+};
+
+export default NavItem;

@@ -4,9 +4,15 @@
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import Image from "next/image";
-import { formattedDate } from "./NavSection";
+// import { formattedDate } from "./NavSection";
 
 
+export const formattedDate = new Intl.DateTimeFormat("bn-BD", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(new Date());
 
 const TodaysMarketPrice = () => {
     const todayDate = formattedDate

@@ -1,8 +1,10 @@
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
-import NavSection from "./components/home/NavSection";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/shared/Footer";
+import { Suspense } from "react";
+import Header from "./components/home/Header";
+import NavLinks from "./components/home/NavLinks";
 
 const hind_siliguri = Hind_Siliguri({
   subsets : ['latin','bengali'],
@@ -25,7 +27,21 @@ export default function RootLayout({ children }) {
          className={`${hind_siliguri.variable} h-full antialiased font-sans `}
     >
       <body className="min-h-full flex flex-col">
-         <NavSection />
+
+
+         {/* <NavSection /> */}
+         <Suspense
+          fallback={
+            <div className="w-full h-1 bg-gray-200 overflow-hidden">
+              <div className="h-full w-1/3 bg-blue-400 animate-loading-bar" />
+            </div>
+          }>
+          <Header></Header>
+        </Suspense>
+
+        <NavLinks></NavLinks>
+        <div className="bg-gray-50"></div>
+
         {children}
         <Footer />
         <ToastContainer />
