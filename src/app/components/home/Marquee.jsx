@@ -1,20 +1,26 @@
+import Link from "next/link";
 import { IoTriangleSharp } from "react-icons/io5";
 import MarqueeText from "react-marquee-text";
 import 'react-marquee-text/dist/styles.css'
+
+ 
 
 const Marquee = async () => {
     'use cache'
     const res = await fetch(`${process.env.BASE_API_URL}/products`)
     const products = await res.json()
 
+    console.log(products?.slug);
+
     const toBanglaNumber = (value) => {
         return value.toLocaleString('bn-BD')
     }
     return (
         <div className="bg-base-150 py-2 px-2 border-b border-gray-100 bg-white">
+          
             <MarqueeText direction="right" duration={20}  >
                 {
-                    products.map((product) => <div key={product.id} className="px-4">
+                    products.map((product) =>  <Link href={`/productDetail/${product?.id}`} key={product.id}> <div  className="px-4">
                         <div className="flex items-center gap-2">
                             <span>{product.image}</span>
                             <p className="font-bold">{product.nameBn}</p>
@@ -24,10 +30,12 @@ const Marquee = async () => {
                         </div>
 
 
-
-                    </div>)
+                    </div> 
+                       </Link>)
                 }
             </MarqueeText>
+
+           
         </div>
     );
 };

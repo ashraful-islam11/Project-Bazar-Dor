@@ -21,7 +21,7 @@ const ProductDetail = async ({ params }) => {
                     : product.nameBn === 'মাখন (১০০ গ্রাম)'
                         ? 'মাখন'
                         : product.categoryNameBn
-        : product.categoryNameBn;
+        : product.categoryNameBn; 
 
     const minPrices = product.markets.map((market) => market.min)
     const minPrice = Math.min(...minPrices)
@@ -30,7 +30,7 @@ const ProductDetail = async ({ params }) => {
     const totalPrice = [...minPrices, ...maxPrices]
     const averagePrice = Math.ceil(totalPrice.reduce((total, price) => (total + price), 0) / totalPrice.length)
     const sortedMarrketsByLowestPrice = [...product.markets].sort((a, b) => a.min - b.min)
-    const sortedMarketsByHighestPrice = [...sortedMarrketsByLowestPrice].sort((a, b) => a.max - b.max)
+    const sortedMarketsByHighestPrice = [...sortedMarrketsByLowestPrice].sort((a, b) => a.max - b.max) 
     return (
         <div>
             <div className="max-w-7xl mx-auto px-2">
