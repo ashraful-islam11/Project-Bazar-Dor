@@ -39,6 +39,7 @@ const TodaysMarketPrice = () => {
             as={Link}
             href="/products"
             className="bg-[#05893E] hover:bg-[#047233] text-[#F3FBF4] text-xs sm:text-sm font-semibold px-5 sm:px-6 h-9 sm:h-11 rounded-xl shadow-sm transition-colors"
+            onClick={()=>document.getElementById('all-products')?.scrollIntoView({behavior:'smooth'})} 
           >
             সব পণ্য দেখুন
           </Button>
