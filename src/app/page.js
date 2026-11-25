@@ -1,4 +1,5 @@
 import AllProducts from "./components/home/AllProducts";
+import PriceDecreasedProducts from "./components/home/PriceDecreasedProducts";
 import PriceIncreasedProducts from "./components/home/PriceIncreasedProducts";
 import TodaysMarketPrice from "./components/home/TodaysMarketPrice";
 
@@ -9,6 +10,7 @@ export default function Home() {
         
         <TodaysMarketPrice />
         <PriceIncreasedProducts />
+        <PriceDecreasedProducts />
 
 
         <AllProducts />
