@@ -6,7 +6,7 @@ import TodaysMarketPrice from "./components/home/TodaysMarketPrice";
 
 export default function Home() {
   return (
-     <div className = "bg-gray-200">  
+     <div className = "bg-gray-100">  
         
         <TodaysMarketPrice />
         <PriceIncreasedProducts />

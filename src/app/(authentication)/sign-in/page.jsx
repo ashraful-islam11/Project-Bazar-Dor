@@ -40,17 +40,26 @@ const SignInContent = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    await signIn.social({
+   const res =   await signIn.social({
       provider: "google",
       callbackURL: "/",
+     
     });
+
+    if(res){
+      toast.success('সফলভাবে সাইন ইন সম্পন্ন হয়েছে')
+    }
+    
   };
 
   const handleGithubSignIn = async () => {
-    await signIn.social({
+     const res = await signIn.social({
       provider: "github",
       callbackURL: "/",
     });
+    if(res){
+      toast.success('সফলভাবে সাইন ইন সম্পন্ন হয়েছে')
+    }
   };
 
   return (
