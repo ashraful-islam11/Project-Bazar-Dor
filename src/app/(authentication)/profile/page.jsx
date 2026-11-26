@@ -37,10 +37,15 @@ const MyProfilePage = () => {
         if (resData) {
             toast.success('সফলভাবে সাইন আউট সম্পন্ন হয়েছে!')
             // redirect('/')
-            window.location.replace('/');
+            setTimeOut(()=> {
+                    window.location.replace('/')
+            } ,2000)
+           
+            console.log(resData);
         }
         if (error) {
-            toast.error('দুঃখিত সাইন আউট সম্পন্ন হয় নি!')
+            toast.error('দুঃখিত সাইন আউট সম্পন্ন হয় নি!') ;
+            
         }
     }
     return (
